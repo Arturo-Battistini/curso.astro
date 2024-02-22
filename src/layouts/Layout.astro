@@ -1,9 +1,10 @@
 ---
-interface Props {
-	title: string;
-}
+import HeaderTop from "../components/HeaderTop"
 
-const { title } = Astro.props;
+interface Props {
+	title: string
+}
+const { title } = Astro.props
 ---
 
 <!doctype html>
@@ -16,10 +17,13 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
+
 	<body>
+		<HeaderTop client:load />
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
